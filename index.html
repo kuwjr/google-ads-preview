@@ -1,199 +1,208 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" ng-app>
 
 <head>
-    <!-- jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- angularjs cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
 
-    <link rel="stylesheet" href="index.css">
+  <!-- jquery cdn -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Google Ads Preview</title>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Google Ads Preview</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="index.css">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
 </head>
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <body>
 
-    <div class="container" ng-app="">
-        <div class="row">
-            <div class="col-sm">
-                <!-- Form Section -->
-                <form>
-                    <!-- final url 35 -->
-                    <div class="form-group">
-                        <label>Final URL</label>
-                        <input maxlength="35" id="finalUrl" ng-model="finalUrl" class="form-control form-control-sm" type="text"
-                            ng-init="finalUrl = 'https://shirazkuwailid.com/blog/'">
-                    </div>
-                    <!-- headline 1 30 -->
-                    <div class="form-group">
-                        <label>Headline 1</label>
-                        <input maxlength="30" id="headline1" ng-model="headline1" class="form-control form-control-sm" type="text"
-                            ng-init="headline1 = 'Ad Preview'">
-                    </div>
-                    <!-- headline 2 30 -->
-                    <div class="form-group">
-                        <label>Headline 2</label>
-                        <input maxlength="30" id="headline2" ng-model="headline2" class="form-control form-control-sm" type="text"
-                            ng-init="headline2 = 'Made easy'">
-                    </div>
-                    <!-- headline 3 30 -->
-                    <div class="form-group">
-                        <label>Headline 3</label>
-                        <input maxlength="30" id="headline3" ng-model="headline3" class="form-control form-control-sm" type="text"
-                            ng-init="headline3 = 'By Shiraz Kuwailid'">
-                    </div>
-                    <!-- path -->
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm">
-                                <!-- final url -->
-                                <label>Address</label>
-                                <input id="path" class="form-control form-control-sm" type="text" disabled
-                                    placeholder={{finalUrl}}>
-                            </div>
-                            <div class="col-sm">
-                                <!-- headline 15 -->
-                                <label>Path 1</label>
-                                <input maxlength="15" id="headline" ng-model="headline" class="form-control form-control-sm"
-                                    type="text" placeholder="headline">
-                            </div>
-                            <div class="col-sm">
-                                <!-- long description 15 -->
-                                <label>Path 2</label>
-                                <input maxlength="15" id="longDescription" ng-model="longDescription"
-                                    class="form-control form-control-sm" type="text" placeholder="Long-description">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- description 1 90 -->
-                    <div class="form-group">
-                        <label>Description 1</label>
-                        <input maxlength="90" id="description1" ng-model="description1" class="form-control form-control-sm"
-                            type="text" ng-init="description1 = 'Description 1'">
-                    </div>
-                    <!-- description 2 90 -->
-                    <div class="form-group">
-                        <label>Description 2</label>
-                        <input maxlength="90" id="description2" ng-model="description2" class="form-control form-control-sm"
-                            type="text" ng-init="description2 = 'Description 2'">
-                    </div>
-                </form>
-            </div>
-            <div class="col-sm">
-                <!-- Preview Section -->
-                <div class="smartphone">
-                    <div class="content">
-                        <div class="row" style="margin-top:5px; margin-bottom: 10px;">
-                            <!-- google logo -->
-                            <div class="col-sm-12 text-center" style="font-size:20px;">
-                                <span style="color:blue;">G</span><span style="color:red;">o</span><span
-                                    style="color:orange;">o</span><span style="color:blue;">g</span><span
-                                    style="color:green;">l</span><span style="color:red;">e</span>
-                            </div>
-                            <!-- search bar -->
-                            <div class="row center" style="margin-top:5px; padding:2px;">
-                                <div class="col-sm-12 mobile-cards">
-                                    <div class="inner-addon left-addon right-addon">
-                                        <input id="mobile-search-input" class="form-control input" type="text">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                        <span class="fa fa-microphone" style="font-size: medium; color: blue;"></span>
-                                    </div>
-                                    <div class="" style="color:#545454; padding:5px 10px;">
-                                        <span style="color:#1a0dab;">ALL</span> <span
-                                            style="margin-left: 15px;">MAPS</span> <span
-                                            style="margin-left: 15px;">IMAGES</span>
-                                        <span style="margin-left: 15px;">VIDEOS</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ad box -->
-                        <div class="row" style="margin: auto; padding:2px; max-width: 100%;">
-                            <div class="col-sm-12 ad mobile-cards" style="background-color: white;">
-                                <div>
-                                    <div class="urlline-mobile">
-                                        <div class="row">
-                                            <!-- ngIf: getCompleteDisplayURL(ad) -->
-                                            <div class="col-xs-10 ng-scope center"
-                                                style="overflow: hidden; text-overflow: ellipsis;">
-                                                <strong class="adtag-mobile">Ad&nbsp;·</strong>&nbsp;<span
-                                                    class="displayurl-mobile ng-binding">{{finalUrl}}{{headline}}{{longDescription}}</span>
-                                            </div>
-                                            <div class="col-xs-2"><i style="color:bbb; padding:0px 5px 0px 5px;"
-                                                    class="fa fa-info-circle"></i></div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="headline">
-                                            <a style="line-height: 0.1%;" href={{finalUrl}} rel="nofollow">
-                                                <span style="line-height: 0.1%;" ng-if="headline1" class="ng-scope headl">{{headline1}}</span>
-                                                <span style="line-height: 0.1%;" ng-if="headline2" class="ng-scope headl"><span id="hl2">|</span> {{headline2}}</span>
-                                                <span style="line-height: 0.1%;" ng-if="headline3" class="ng-scope headl"><span id="hl3">|</span> {{headline3}}</span>
-                                            </a>
-                                        </h3>
-                                    </div>
-
-                                    <!-- ngIf: ad.features.showRating -->
-                                    <div>
-                                        <span class="description ng-binding">{{description1}}</span>
-                                        <span class="description ng-binding">{{description2}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column">
+        <!-- smart phone -->
+        <div class="frame-base">
+          <div class="frame-base-light"></div>
+          <div class="side-button mute"></div>
+          <div class="side-button volume-up"></div>
+          <div class="side-button volume-down"></div>
+          <div class="side-button hold"></div>
+          <div class="stripe top"></div>
+          <div class="stripe bottom"></div>
+          <div class="port"></div>
+          <div class="layer2">
+            <div class="layer2-light"></div>
+            <div class="layer2-light light-right"></div>
+            <div class="screen">
+              <div class="mask">
+                <div class="left-pie"></div>
+                <div class="right-pie"></div>
+                <div class="speaker"></div>
+                <div class="camera">
+                  <div class="lenz left"></div>
+                  <div class="lenz right"></div>
                 </div>
+              </div>
+              <!-- inside screen - header -->
+              <div>
+                <div class="screen-top">
+                  <!-- menu, logo, dp -->
+                  <div class="ad-header">
+                    <!-- menu -->
+                    <div class="ad-menu-toggle">
+                      <svg style=" fill:#70757a;width:24px;height:24px" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+                      </svg>
+                    </div>
+                    <!-- logo -->
+                    <div class="ad-logo"></div>
+                    <!-- dp -->
+                    <div class="ad-dp"></div>
+                  </div>
+                  <span></span>
+                  <!-- search bar -->
+                  <div class="ad-search">
+                    <div class="ad-search-button">
+                      <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                          d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                        </path>
+                      </svg>
+                    </div>
+                    <input class="ad-search-bar"></input>
+                    <div class="ad-search-x">
+                      <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                        </path>
+                      </svg>
+                    </div>
+                  </div>
+                  <!-- all/ images/ maps/ videos -->
+                  <div class="categories">
+                    <div class="category-item" style="color: #202124; text-decoration: underline;">All</div>
+                    <div class="category-item">Images</div>
+                    <div class="category-item">Maps</div>
+                    <div class="category-item">Videos</div>
+                    <div class="category-item">News</div>
+                    <div class="category-item">Books</div>
+                  </div>
+                </div>
+                <!-- actual ad -->
+                <div class="ad">
+                  <div ng-if="finalUrl" onclick="" class="ad-final-url"><span class="dot">Ad .</span>
+                    {{finalUrl}}<span ng-if="path.headline02">/</span>{{path.headline02}}<span
+                      ng-if="path.longDescription">/</span>{{path.longDescription}}
+                  </div>
+                  <div class="ad-headline">{{headline01}} <span ng-if="headline02">|</span> {{headline02}} <span
+                      ng-if="headline03">|</span> {{headline03}}</div>
+                  <div class="ad-description">{{description01}} {{description02}}</div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+
+      <!-- form -->
+      <div class="one-half column">
+        <!-- final url -->
+        <div class="row">
+          <div class="twelve columns">
+            <label for="finalUrl">Final Url</label>
+            <input id="finalUrl" class="u-full-width" type="text" ng-init="finalUrl='https://shimran.com/'"
+              ng-model="finalUrl" />
+          </div>
+        </div>
+        <!-- headline 1 -->
+        <div class="row">
+          <div class="twelve columns">
+            <label for="headline01">Headline 01</label>
+            <input id="headline01" class="u-full-width" type="text" ng-init="headline01='Create your website today!'"
+              ng-model="headline01">
+          </div>
+        </div>
+        <!-- headline 2 -->
+        <div class="row">
+          <div class="twelve columns">
+            <label for="headline02">Headline 02</label>
+            <input id="headline02" class="u-full-width" type="text"
+              ng-init="headline02='We offer the best service for the best price.'" ng-model="headline02">
+          </div>
+        </div>
+        <!-- headline 3 -->
+        <div class="row">
+          <div class="twelve columns">
+            <label for="headline03">Headline 03</label>
+            <input id="headline03" class="u-full-width" type="text" ng-init="headline03='Come join us today.'"
+              ng-model="headline03">
+          </div>
+        </div>
+        <!-- path -->
+        <div class="row">
+          <div style="display: table-cell; width: 4em;" class="twelve columns">
+            <input class="u-full-width" type="text" placeholder="Path" disabled>
+          </div>
+          <div style="display: table-cell; width: 8em; max-width: 12em;" class="twelve columns">
+            <input class="u-full-width" type="text" placeholder="{{finalUrl}}" disabled>
+          </div>
+          <div style="display: table-cell; width: 8em; max-width: 12em;" class="twelve columns">
+            <input class="u-full-width" type="text" placeholder="headline 02" ng-model="path.headline02">
+          </div>
+          <div style="display: table-cell; width: 2em;" class="twelve columns">
+            <input class="u-full-width" type="text" placeholder="/" disabled>
+          </div>
+          <div style="display: table-cell; width: 8.5em; max-width: 12em;" class="twelve columns">
+            <input class="u-full-width" type="text" placeholder="Long Description" ng-model="path.longDescription">
+          </div>
+        </div>
+        <!-- description 1 -->
+        <div class="row">
+          <div class="twelve columns">
+            <label for="description01">Description 01</label>
+            <textarea class="u-full-width" type="text" ng-init="description01='Come join us today.'"
+              ng-model="description01"></textarea>
+          </div>
+        </div>
+        <!-- description 2 -->
+        <div class="row">
+          <div class="twelve columns">
+            <label for="description02">Description 02</label>
+            <textarea class="u-full-width" type="text" ng-init="description02='Add some text in here.'"
+              ng-model="description02"></textarea>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-    
-    <!-- angular modules -->
-    <script src="index.js"></script>
-
-    <!-- jquery modules -->
-    <script>
-        //santize input text
-        $(document).ready(function(){
-            //hide "Ad ." if url is empty
-            $('#finalUrl').keyup(function(){
-                let urlLength = $( "#finalUrl" ).val().length
-                if(urlLength < 1){
-                    $('.adtag-mobile').hide()
-                }else{
-                    $('.adtag-mobile').show()
-                }
-            })
-            //hide "|" if headline 1 is empty
-            $('#headline1').keyup(function(){
-                let urlLength = $( "#headline1" ).val().length
-                if(urlLength < 1){
-                    $('#hl2').hide()
-                }
-            })
-            //hide "|" if headline 2 is empty
-            $('#headline2').keyup(function(){
-                let urlLength = $( "#headline2" ).val().length
-                if(urlLength < 1){
-                    $('#hl3').hide()
-                }
-            })
-        })
-    </script>
-
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
 
 </html>
