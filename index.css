@@ -1,6 +1,9 @@
 .ad-description{
   color: #4d5156;
   font-size: 14px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .ad-headline{

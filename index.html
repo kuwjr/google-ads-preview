@@ -41,7 +41,7 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top: 25%;">
       <div class="one-half column">
         <!-- smart phone -->
         <div class="frame-base">
@@ -144,7 +144,7 @@
           <div class="twelve columns">
             <label for="headline01">Headline 01</label>
             <input id="headline01" class="u-full-width" type="text" ng-init="headline01='Create your website today!'"
-              ng-model="headline01">
+              ng-model="headline01"  maxlength="30" />
           </div>
         </div>
         <!-- headline 2 -->
@@ -152,7 +152,7 @@
           <div class="twelve columns">
             <label for="headline02">Headline 02</label>
             <input id="headline02" class="u-full-width" type="text"
-              ng-init="headline02='We offer the best service for the best price.'" ng-model="headline02">
+              ng-init="headline02='We offer the best service for the best price.'" ng-model="headline02"  maxlength="30" />
           </div>
         </div>
         <!-- headline 3 -->
@@ -160,7 +160,7 @@
           <div class="twelve columns">
             <label for="headline03">Headline 03</label>
             <input id="headline03" class="u-full-width" type="text" ng-init="headline03='Come join us today.'"
-              ng-model="headline03">
+              ng-model="headline03"  maxlength="30" />
           </div>
         </div>
         <!-- path -->
@@ -186,7 +186,7 @@
           <div class="twelve columns">
             <label for="description01">Description 01</label>
             <textarea class="u-full-width" type="text" ng-init="description01='Come join us today.'"
-              ng-model="description01"></textarea>
+              ng-model="description01"  maxlength="90"></textarea>
           </div>
         </div>
         <!-- description 2 -->
@@ -194,7 +194,7 @@
           <div class="twelve columns">
             <label for="description02">Description 02</label>
             <textarea class="u-full-width" type="text" ng-init="description02='Add some text in here.'"
-              ng-model="description02"></textarea>
+              ng-model="description02" maxlength="90"></textarea>
           </div>
         </div>
       </div>
